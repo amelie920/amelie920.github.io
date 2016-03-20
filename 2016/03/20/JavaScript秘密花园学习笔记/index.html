@@ -22,7 +22,7 @@ arguments对象arguments不是数组，是一个object对象  为了方便使用
 除了null undefined外，所有变量都可以看成对象，调用对象的方法
 hasOwnProperty()可以用于for in循环中作为if()判断条件  因为for in循环会枚举原型链上的所有属性  判断之后性能会好很多
 arguments对象arguments不是数组，是一个object对象  为了方便使用一般转换为数组性">
-<meta property="og:updated_time" content="2016-03-20T13:03:09.933Z">
+<meta property="og:updated_time" content="2016-03-20T13:20:21.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Amelie">
 <meta name="twitter:description" content="JavaScript秘密花园学习笔记标签（空格分隔）： js 
@@ -220,7 +220,7 @@ arguments对象arguments不是数组，是一个object对象  为了方便使用
   
     <div class="article-meta">
       <a href="/2016/03/20/JavaScript秘密花园学习笔记/" class="article-date">
-  	<time datetime="2016-03-20T13:05:36.740Z" itemprop="datePublished">2016-03-20</time>
+  	<time datetime="2016-03-20T13:20:30.570Z" itemprop="datePublished">2016-03-20</time>
 </a>
     </div>
   
@@ -251,11 +251,11 @@ arguments对象arguments不是数组，是一个object对象  为了方便使用
 </li>
 <li><p><strong>变量提升</strong><br>var声明和function都会变量提升  下面是变量提升的优秀案例</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> myvar = <span class="string">'my value'</span>;  </span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;  </span><br><span class="line">    alert(myvar); <span class="comment">// undefined  </span></span><br><span class="line">    <span class="keyword">var</span> myvar = <span class="string">'local value'</span>;  </span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-<ul>
-<li><strong>数组</strong>的length变小会截短数组，但是变大不会改变数组</li>
-<li><strong>类型typeof</strong><br><code>==</code>会强制转变变量类型  <code>===</code>严格模式不会强制转变  这两个操作符都是等于操作符  但是当有一各操作数为对象时，行为就不同了。啫喱等于操作符比较的不是值是否相等，而是是否属于同一个身份，只有对象的同一个实例才被认为是相等的<br><code>typeof</code>唯一有用的地方，测试变量是否定义<code>typeof foo !== &quot;undefuned&quot;</code><br><code>typeof</code>大部分返回object  为了检查对象的类型需要使用定义在object.prototype上的toString()方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">obj,type</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> cls = object.prototype.toString.call(obj).splice(<span class="number">8</span>,-<span class="number">1</span>);</span><br><span class="line">   <span class="keyword">return</span> cls !== <span class="string">"undefined"</span>&amp; cls!==<span class="string">"null"</span> &amp;cls == <span class="string">"type"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//object.prototype.toString.call(obj)返回  [object string]</span></span><br><span class="line">is(<span class="string">'String'</span>, <span class="string">'test'</span>); <span class="comment">// true</span></span><br><span class="line">is(<span class="string">'String'</span>, <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'test'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p><strong>数组</strong>的length变小会截短数组，但是变大不会改变数组</p>
+</li>
+<li><p><strong>类型typeof</strong><br><code>==</code>会强制转变变量类型  <code>===</code>严格模式不会强制转变  这两个操作符都是等于操作符  但是当有一各操作数为对象时，行为就不同了。啫喱等于操作符比较的不是值是否相等，而是是否属于同一个身份，只有对象的同一个实例才被认为是相等的<br><code>typeof</code>唯一有用的地方，测试变量是否定义<code>typeof foo !== &quot;undefuned&quot;</code><br><code>typeof</code>大部分返回object  为了检查对象的类型需要使用定义在object.prototype上的toString()方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">is</span>(<span class="params">obj,type</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">var</span> cls = object.prototype.toString.call(obj).splice(<span class="number">8</span>,-<span class="number">1</span>);</span><br><span class="line">   <span class="keyword">return</span> cls !== <span class="string">"undefined"</span>&amp; cls!==<span class="string">"null"</span> &amp;cls == <span class="string">"type"</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//object.prototype.toString.call(obj)返回  [object string]</span></span><br><span class="line">is(<span class="string">'String'</span>, <span class="string">'test'</span>); <span class="comment">// true</span></span><br><span class="line">is(<span class="string">'String'</span>, <span class="keyword">new</span> <span class="built_in">String</span>(<span class="string">'test'</span>)); <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <p><code>instanceof</code> 操作符应该仅仅用来比较来自同一个 JavaScript 上下文的自定义对象。 正如 typeof 操作符一样，任何其它的用法都应该是避免的.</p>
 <ul>
 <li><strong>字符串转换为数字</strong>的常用方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> +<span class="string">'010'</span> === <span class="number">10</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'010'</span>) === <span class="number">10</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'010'</span>, <span class="number">10</span>) === <span class="number">10</span>  <span class="comment">// 用来转换为整数</span></span><br><span class="line"> </span><br><span class="line">+<span class="string">'010.2'</span> === <span class="number">10.2</span></span><br><span class="line"><span class="built_in">Number</span>(<span class="string">'010.2'</span>) === <span class="number">10.2</span></span><br><span class="line"><span class="built_in">parseInt</span>(<span class="string">'010.2'</span>, <span class="number">10</span>) === <span class="number">10</span></span><br></pre></td></tr></table></figure>
@@ -287,6 +287,20 @@ clearTimeout(id);
   </div>
   
     
+<nav id="article-nav">
+  
+    <a href="/2016/03/20/codewars打怪记录/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
   
 </article>
 
