@@ -116,7 +116,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						
+						<a href="/tags/js/" style="font-size: 10px;">js</a>
 					</div>
 				</section>
 				
@@ -202,11 +202,11 @@
 
       <div class="body-wrap">
   
-    <article id="post-test" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-codewars打怪记录1" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/24/test/" class="article-date">
-  	<time datetime="2016-03-24T15:39:05.000Z" itemprop="datePublished">2016-03-24</time>
+      <a href="/2016/03/25/codewars打怪记录1/" class="article-date">
+  	<time datetime="2016-03-25T07:12:44.000Z" itemprop="datePublished">2016-03-25</time>
 </a>
     </div>
   
@@ -219,7 +219,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/test/">test</a>
+      <a class="article-title" href="/2016/03/25/codewars打怪记录1/">codewars打怪记录1</a>
     </h1>
   
 
@@ -228,15 +228,88 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>这是<a href="http://amelie920.github.io/baiduife/js/task14.html">demo1</a>;<br>1.<strong>数组反向</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line">reverse = <span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> array.reduceRight(<span class="function"><span class="keyword">function</span>(<span class="params">a, v</span>)</span>&#123; <span class="keyword">return</span> a.push(v), a &#125;, []);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">reverse = <span class="function"><span class="keyword">function</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line"><span class="keyword">var</span> newArr = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = array.length-<span class="number">1</span>; i&gt;=<span class="number">0</span>; i--)&#123;</span><br><span class="line">  newArr.push(array[i]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">return</span> newArr;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
       
     </div>
     
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
       
 
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/codewars打怪记录1/#more">more >></a>
+        </p>
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-javascript秘密花园学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/25/javascript秘密花园学习笔记/" class="article-date">
+  	<time datetime="2016-03-25T07:12:09.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/25/javascript秘密花园学习笔记/">javascript秘密花园学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>除了<code>null undefine</code>d外，所有变量都可以看成对象，调用对象的方法</li>
+<li><code>hasOwnProperty()</code>可以用于<code>for in</code>循环中作为<code>if()</code>判断条件  因为for in循环会枚举原型链上的所有属性  判断之后性能会好很多</li>
+<li><strong>arguments对象</strong><br>arguments不是数组，是一个object对象  为了方便使用一般转换为数组<br>性能不是很好，比较慢的转换方法 <code>Array.prototype.splice.call(arguments)</code><br><strong>推荐</strong>，将参数从一个函数传递到另一个的做法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>（）</span>&#123;</span><br><span class="line">     abc.apply(<span class="literal">null</span>,<span class="built_in">arguments</span>);     </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">abd</span>(<span class="params">a,b,c</span>)</span>&#123;</span><br><span class="line">   <span class="keyword">do</span>  something~~</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a  href="/2016/03/25/javascript秘密花园学习笔记/#more">more >></a>
+        </p>
       
       <div class="clearfix"></div>
     </div>
